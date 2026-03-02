@@ -118,10 +118,24 @@ Common formats
 - `gltf` / `glb`
 - `kicad-library`
 
-8) Regression snapshots
-- `tsci snapshot`
-- `tsci snapshot -u` (update)
-- `tsci snapshot --3d` (include 3D)
+8) Visual snapshots for analysis and verification
+- `tsci snapshot` generates visual outputs (schematic/PCB, optionally 3D) and writes/overwrites snapshots by default.
+- Use these visuals to inspect placement, orientation, and overall circuit understanding during iteration.
+- `tsci snapshot --test` switches to regression-test mode: it fails on visual diffs and does **not** overwrite snapshots.
+- `tsci snapshot --pcb-only` generates only PCB visuals, which is especially useful for placement-focused iteration.
+- `tsci snapshot --3d` includes 3D snapshots in the output.
+
+Recommended pattern:
+```bash
+# During development: generate fresh visuals for analysis and review
+tsci snapshot
+
+# During placement-heavy iterations: focus only on PCB output
+tsci snapshot --pcb-only
+
+# In CI/regression checks: detect unexpected visual changes without overwriting
+tsci snapshot --test
+```
 
 9) Auth / publish
 - `tsci login` (browser-based)

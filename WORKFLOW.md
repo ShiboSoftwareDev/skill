@@ -32,7 +32,9 @@
 
 7) Stabilize and regression-test
 - Use `tsci build` in CI or before sharing.
-- Use `tsci snapshot` when you want visual regression checks for PCB/schematic.
+- Use `tsci snapshot` to generate visuals that help with placement analysis and quick circuit understanding.
+- Use `tsci snapshot --pcb-only` when you want a fast, placement-focused PCB view without schematic snapshots.
+- Use `tsci snapshot --test` in CI/regression checks to prevent overwriting snapshots and catch unexpected visual diffs.
 
 8) Export what you need
 - `tsci export` for SVG/netlist/DSN/3D/library
