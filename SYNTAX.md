@@ -40,7 +40,7 @@ Connect pins with port selectors:
 <trace from=".R1 > .pin1" to=".C1 > .pin1" />
 ```
 
-Connect to named nets:
+Connect to named nets. Net names must start with a letter or underscore and can only contain letters, numbers and underscores. 
 
 ```tsx
 <trace from=".U1 > .pin1" to="net.GND" />
