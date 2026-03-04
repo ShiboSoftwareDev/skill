@@ -90,6 +90,9 @@ The interactive picker shows:
 Tip: If someone has already imported the part, prefer the registry version—it may have better pin mappings or schematic symbols.
 
 6) Build (generate circuit.json)
+
+Before building, it can be a good idea to check placement of the entire board or a specific component with `tsci check placement [file] [refdes]`
+
 - `tsci build` (auto-detects entrypoint)
 - `tsci build path/to/file.circuit.tsx`
 
