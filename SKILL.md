@@ -44,7 +44,8 @@ When this Skill is active:
 5) Build and iterate
 - Run `tsci check netlist` before `tsci check placement` and `tsci build` to catch connectivity issues early.
 - Do not finalize unless `tsci check placement` passes with no actionable placement violations; if violations exist, fix layout and rerun until clean.
-- Run `tsci snapshot` to inspect placement before checking routing.
+- Use `tsci check trace-length` to check for long straight line distances (before routing) or long routes (after routing)
+- Run `tsci build --pcb-png [file]` to inspect placement before checking routing.
 - Run `tsci check routing-difficulty` after placement to identify potential areas of congestion.
 - Run `tsci build` to compile and validate the circuit.
 - DRC (Design Rule Check) errors can often be ignored during development—focus on getting the circuit correct first.
