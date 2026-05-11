@@ -40,6 +40,7 @@ When this Skill is active:
 - Use layout props intentionally:
   - PCB: `pcbX`, `pcbY`, `pcbRotation`, `layer`
   - Schematic: `schX`, `schY`, `schRotation`, `schOrientation`
+- On large projects (5+ components), use `<schematicsection />` to group components by function (e.g. "Power", "MCU", "IO"). This is one of the most important things for schematic readability. Assign each component a `schSectionName` and manually position all members of a section in close proximity using `schX`/`schY`.
 - Use `<trace />` for connectivity; prefer net connections (`net.GND`, `net.VCC`, etc.) for power/ground.
 
 5) Build and iterate
@@ -137,6 +138,7 @@ When this Skill is active:
 - [`<schematicpath />`](./elements/schematicpath.md)
 - [`<schematicrect />`](./elements/schematicrect.md)
 - [`<schematicrow />`](./elements/schematicrow.md)
+- [`<schematicsection />`](./elements/schematicsection.md)
 - [`<schematictable />`](./elements/schematictable.md)
 - [`<schematictext />`](./elements/schematictext.md)
 - [`<silkscreencircle />`](./elements/silkscreencircle.md)
